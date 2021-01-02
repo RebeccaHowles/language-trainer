@@ -1,0 +1,36 @@
+.content {
+  flex-direction: column;
+  text-align: justify;
+}
+
+.services {
+  max-width: 800px;
+  padding: 20px;
+  
+}
+
+.services li {
+  padding-top: 20px;
+}
+
+span {
+  color: dimgray;
+}
+
+.classes li {
+  padding: 5px;
+  list-style-type: circle;
+  margin-left: 10px;
+}
+
+.interview li {
+  padding: 5px;
+  list-style-type: circle;
+  margin-left: 10px;
+}
+
+.correction li {
+  padding: 5px;
+  list-style-type: circle;
+  margin-left: 10px;
+}

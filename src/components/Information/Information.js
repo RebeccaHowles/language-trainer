@@ -1,12 +1,12 @@
-import './components.css';
+import './information.css';
 import React from 'react';
 
-function Home () {
+function Information () {
   return (
     <div className='content'>
-      <p>Home</p>
+      
     </div>
   );
 }
 
-export default Home;
+export default Information;
