@@ -1,0 +1,30 @@
+.homeContent {
+  background-image: url('./Landing.png');
+  height: 90vh;
+  width: 100vw;
+  background-position: bottom;
+  background-repeat: no-repeat;
+  background-size: cover;
+  opacity: 0.9;
+  padding: 150px;
+}
+
+.missionStatement {
+  max-width: 550px;
+  color: white;
+  background: linear-gradient( rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7));
+  border-radius: 25px;
+  padding: 25px;
+}
+
+@media screen and (max-width: 769px) {
+  .homeContent {
+    background-image: url('./Landing.png');
+    height: 90vh;
+    width: 100vw;
+    background-position: right;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 50px;
+  }
+}
