@@ -1,0 +1,14 @@
+.iconify {
+  background: url('https://api.iconify.design/fa-whatsapp.svg') no-repeat center center / contain;
+  content: url('https://api.iconify.design/fa-whatsapp.svg?height=14&inline=true');
+  vertical-align: -0.143em;
+}
+
+.contact {
+  max-width: 800px;
+  color: black;
+  background: white;
+  border-radius: 25px;
+  padding: 25px;
+  margin-top: 1em;
+}

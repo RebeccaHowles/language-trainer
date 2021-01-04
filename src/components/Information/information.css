@@ -1,0 +1,27 @@
+.content {
+  flex-direction: column;
+  text-align: justify;
+}
+
+.info {
+  max-width: 800px;
+  border-radius: 25px;
+  padding: 25px;
+  margin: 10px;
+  color: black;
+  background: white;
+  max-height: 80vh;
+  overflow-y:scroll;
+}
+
+.info h3 {
+  padding-top: 20px;
+}
+
+.info li {
+  padding-top: 10px;
+}
+
+.faq .question {
+  font-weight: bold;
+}

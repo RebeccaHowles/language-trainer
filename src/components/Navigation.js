@@ -4,11 +4,11 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faBars, faHome } from '@fortawesome/free-solid-svg-icons'
 import { Link } from 'react-router-dom';
 
-function Navigation () {
+export function Navigation () {
   return (
     <nav className='navigation'>
       <Link to='/'>
-        <span className='logo'><FontAwesomeIcon icon={faHome} />  Rebecca Howles</span>
+        <div className='logo'><FontAwesomeIcon icon={faHome} />  Rebecca Howles</div>
       </Link>
       <ul className='navlinks'>
         <Link to='/about'>
@@ -40,5 +40,3 @@ function toggleNavigation () {
     navlinks.style.display = 'block'
   }
 }
-
-export default Navigation;

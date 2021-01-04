@@ -2,7 +2,7 @@ button {
   background-color: white;
   color: #006B6B;
   padding: 5px;
-  border-radius: 12px;
+  border-radius: 10px;
   cursor: pointer;
   transition-duration: 0.4s;
   border: 1px solid #006B6B;
@@ -15,10 +15,23 @@ button:hover {
 }
 
 .content {
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-  padding: 20px;
+  max-height: 90vh;
+  overflow-y:scroll;
+}
+
+.backgroundImage {
+  background-image: url('./Map.png');
+  height: 90vh;
+  width: 100vw;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: grid;
+  place-items: center;
+}
+
+
+.callToAction button {
+  margin: 1em;
 }
 
 .navigation {
@@ -27,7 +40,7 @@ button:hover {
   align-items: center;
   min-height: 10vh;
   min-width: 10vw;
-  background-image: url('./Map.png');
+  background-color: #006B6B;
 }
 
 .navlinks {
@@ -38,15 +51,12 @@ button:hover {
 }
 
 .navlinks a {
-  text-decoration: none;
-  list-style: none;
   font-weight: bold;
   color: white;
 }
 
 .logo {
   font-weight: bold;
-  text-decoration: none;
   color: white;
 }
 

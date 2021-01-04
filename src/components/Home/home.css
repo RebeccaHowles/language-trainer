@@ -5,8 +5,7 @@
   background-position: bottom;
   background-repeat: no-repeat;
   background-size: cover;
-  opacity: 0.9;
-  padding: 120px;
+  padding: 10em;
 }
 
 .missionStatement {
@@ -15,15 +14,14 @@
   background: linear-gradient( rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7));
   border-radius: 25px;
   padding: 25px;
+  margin: 10px;
 }
 
-.callToAction {
+.homeCTA {
   max-width: 300px;
   padding: 20px;
-}
-
-.callToAction button {
-  margin-top: 10px;
+  background: linear-gradient( rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.7));
+  border-radius: 25px;
 }
 
 @media screen and (max-width: 769px) {
@@ -34,6 +32,10 @@
     background-position: right;
     background-repeat: no-repeat;
     background-size: cover;
-    padding: 20px;
+    padding: 10px;
+  }
+
+  .missionStatement {
+    font-size: small;
   }
 }

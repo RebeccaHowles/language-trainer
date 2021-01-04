@@ -1,14 +1,10 @@
 import React from 'react';
 import './App.css';
-import './components/components.css';
+
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import Navigation from './components/Navigation.js';
-import Home from './components//Home/Home.js';
-import About from './components/About/About.js';
-import Contact from './components/Contact/Contact.js';
-import Services from './components/Services/Services.js';
-import Testimonials from './components/Testimonials/Testimonials.js';
-import Information from './components/Information/Information';
+
+import './components/components.css';
+import { Footer, Navigation, Testimonials, Contact, Information, Services, About, Home } from './components/index.js';
 
 function App () {
   return (
@@ -24,6 +20,7 @@ function App () {
           <Route path='/contact' component={Contact} />
         </Switch>
       </div>
+      <Footer />
     </Router>
   );
 }

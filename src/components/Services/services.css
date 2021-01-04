@@ -5,32 +5,22 @@
 
 .services {
   max-width: 800px;
-  padding: 20px;
-  
+  color: black;
+  background: white;
+  border-radius: 25px;
+  padding: 25px;
+  margin-top: 1em;
+}
+
+.services h3 {
+  padding-top: 20px;
 }
 
 .services li {
-  padding-top: 20px;
+  padding-top: 10px;
 }
 
 span {
   color: dimgray;
 }
 
-.classes li {
-  padding: 5px;
-  list-style-type: circle;
-  margin-left: 10px;
-}
-
-.interview li {
-  padding: 5px;
-  list-style-type: circle;
-  margin-left: 10px;
-}
-
-.correction li {
-  padding: 5px;
-  list-style-type: circle;
-  margin-left: 10px;
-}

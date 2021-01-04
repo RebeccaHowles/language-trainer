@@ -1,7 +1,14 @@
+.video {
+  margin-top: 1em;
+}
 
 .about-me  {
   max-width: 800px;
-  padding-top: 20px;
+  color: black;
+  background: white;
+  border-radius: 25px;
+  padding: 25px;
+  margin-top: 1em;
 }
 
 .about-me p {

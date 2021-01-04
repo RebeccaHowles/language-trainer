@@ -1,0 +1,13 @@
+.card {
+  color: black;
+  background: white;
+  max-width: 800px;
+  border-radius: 25px;
+  padding: 25px;
+  margin: 10px;
+}
+
+.quotes {
+  max-height: 90vh;
+  overflow-y:scroll;
+}
