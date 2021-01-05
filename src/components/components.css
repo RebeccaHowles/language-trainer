@@ -85,10 +85,13 @@ button:hover {
     align-items: center;
     flex-direction: column;
     padding: 0px;
-    font-size: small;
+    font-size: medium;
   }
 
- 
+  .homeContent h2, h3{
+    font-size: medium;
+  }
+
   .navlinks {
     position: absolute;
     right: 0px;
