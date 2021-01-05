@@ -4,7 +4,7 @@ import './contact.css';
 
 export function ContactForm () {
   
-  const { register, handleSubmit, errors } = useForm();
+  const { register, handleSubmit} = useForm();
   
   const onSubmit = (data) => {
     console.log(data);
@@ -22,8 +22,8 @@ export function ContactForm () {
           <input type="text" name="email" ref={register({
               required: 'Email is required.',
               pattern: {
-                value: /^[^@ ]+@[^@ ]+\.[^@ .]{2,}$/,
-                message: 'Email is not valid.'
+              value: /^[^@ ]+@[^@ ]+\.[^@ .]{2,}$/,
+              message: 'Email is not valid.'
               }
             })}/>
         </div>
