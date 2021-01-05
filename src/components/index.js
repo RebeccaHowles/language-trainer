@@ -6,4 +6,5 @@ export { Home } from './Home/Home.js';
 export { Services } from './Services/Services.js';
 export { Navigation } from './Navigation.js';
 export { Footer } from './Footer.js';
+export { ContactForm } from './Contact/ContactForm.js;
 
