@@ -1,56 +1,58 @@
 import React from "react";
 
-
-const handleSubmit = (e) => {
-  e.preventDefault()
-  let myForm = document.getElementById('contact-form');
-  let formData = new FormData(myForm)
-  fetch('/', {
-    method: 'POST',
-    headers: { "Content-Type": "application/x-www-form-urlencoded" },
-    body: new URLSearchParams(formData).toString()
-  }).then(() => console.log('Form successfully submitted')).catch((error) =>
-    alert(error))
+const encode = (data) => {
+  return Object.keys(data)
+      .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
+      .join("&");
 }
 
+export default class ContactForm extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = { name: "", email: "", message: "" };
+  }
 
+  /* Here’s the juicy bit for posting the form submission */
 
-export function ContactForm() {
-  
-  document.querySelector("form").addEventListener("submit", handleSubmit);
+  handleSubmit = e => {
+    fetch("/", {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: encode({ "form-name": "contact", ...this.state })
+    })
+      .then(() => alert("Success!"))
+      .catch(error => alert(error));
 
-  return (
-      <form name="contact-form" id='contact-form' method="POST" data-netlify-recaptcha="true" data-netlify="true">
-        <input type="hidden" name="contact-form" value="contact-form" />
-      <p>
-        <label for="name">Name</label>
-        <input type="text" id="name" name="name" />
-      </p>
-      <p>
-        <label for="email">Email</label>
-        <input type="text" id="email" name="email" />
-      </p>
-      <p>
-      <p>Level</p>
-      <div className='radio-select'>
-        <label>
-      <input type="radio" value="Beginner" name="level" /> Beginner</label>
-      <label>
-        <input type="radio" value="Intermediate" name="level" /> Intermediate
-        </label>
-        <label>
-        <input type="radio" value="Advanced" name="level" /> Advanced
-        </label>
-        </div>
-      <p>
-        <label for="message">Message</label>
-        <textarea id="message" name="message"></textarea>
-      </p>
-      <div data-netlify-recaptcha="true"></div>
-      <p>
-        <button type="submit">Send</button>
-      </p>
-      </p>
-  </form>
-  );
+    e.preventDefault();
+  };
+
+  handleChange = e => this.setState({ [e.target.name]: e.target.value });
+
+  render() {
+    const { name, email, message } = this.state;
+    return (
+      <form onSubmit={this.handleSubmit}>
+        <p>
+          <label>
+            Your Name: <input type="text" name="name" value={name} onChange={this.handleChange} />
+          </label>
+        </p>
+        <p>
+          <label>
+            Your Email: <input type="email" name="email" value={email} onChange={this.handleChange} />
+          </label>
+        </p>
+        <p>
+          <label>
+            Message: <textarea name="message" value={message} onChange={this.handleChange} />
+          </label>
+        </p>
+        <p>
+          <button type="submit">Send</button>
+        </p>
+      </form>
+    );
+  }
 }
+
+      
