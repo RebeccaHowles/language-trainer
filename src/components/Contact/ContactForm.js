@@ -1,6 +1,23 @@
 import React from "react";
 
+
+const handleSubmit = (e) => {
+  e.preventDefault()
+  let myForm = document.getElementById('contact-form');
+  let formData = new FormData(myForm)
+  fetch('/', {
+    method: 'POST',
+    headers: { "Content-Type": "application/x-www-form-urlencoded" },
+    body: new URLSearchParams(formData).toString()
+  }).then(() => console.log('Form successfully submitted')).catch((error) =>
+    alert(error))
+}
+
+
+
 export function ContactForm() {
+  
+  document.querySelector("form").addEventListener("submit", handleSubmit);
 
   return (
       <form name="contact-form" id='contact-form' method="POST" data-netlify-recaptcha="true" data-netlify="true">
