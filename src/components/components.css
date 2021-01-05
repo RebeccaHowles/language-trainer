@@ -85,11 +85,9 @@ button:hover {
     align-items: center;
     flex-direction: column;
     padding: 0px;
+    font-size: small;
   }
 
-  .content h2, h3, p {
-    font: 70%;
-  }
  
   .navlinks {
     position: absolute;
