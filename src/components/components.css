@@ -87,7 +87,7 @@ button:hover {
     padding: 0px;
   }
 
-  .content p {
+  .content h2, h3, p {
     font: 70%;
   }
  
