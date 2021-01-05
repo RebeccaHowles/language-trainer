@@ -1,5 +1,6 @@
 /* eslint-disable no-unused-vars */
 import './contact.css';
+import { ContactForm } from './ContactForm.js';
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -10,17 +11,11 @@ export function Contact () {
     <div className='content'>
       <div className='backgroundImage'>
         <div className='contact'>
-        <p><FontAwesomeIcon icon={faPhone} />{' '}
-          <span class='iconify' data-icon='fa-whatsapp' data-inline='false'/>{' '}00491737586025</p>
-          <p><FontAwesomeIcon icon={faEnvelope} />{' '}rebeccasvoice@gmail.com</p>
-          <div className='callToAction'>
-            <Link to='/services'>
-              <button> Services </button>
-            </Link>
-            <Link to='/information'>
-              <button> Information </button>
-            </Link>
-          </div>
+          <h3><FontAwesomeIcon icon={faEnvelope} /> Get in touch</h3>
+        <p>Contact via <FontAwesomeIcon icon={faPhone} />{' '}
+          <span class='iconify' data-icon='fa-whatsapp' data-inline='false'/>{' '}+49(0)1737586025</p>
+          <p>or message me directly:</p>
+          <ContactForm />
         </div>
       </div>
     </div>

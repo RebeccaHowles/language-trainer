@@ -12,3 +12,26 @@
   padding: 25px;
   margin-top: 1em;
 }
+
+.contact p {
+  margin: 10px;
+}
+
+label {
+  display: block;
+  margin-bottom: .2em;
+}
+
+.radio-select {
+  font-size: small;
+  display: flex;
+  justify-content: space-around;
+}
+
+input, textarea {
+  padding: 5px;
+  border-radius: 10px;
+  border: 1px solid #006B6B;
+}
+
+
