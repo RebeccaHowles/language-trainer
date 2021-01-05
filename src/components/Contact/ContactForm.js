@@ -1,58 +1,49 @@
 import React from "react";
+import { useForm } from 'react-hook-form';
+import './contact.css';
 
-const encode = (data) => {
-  return Object.keys(data)
-      .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
-      .join("&");
-}
-
-export default class ContactForm extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = { name: "", email: "", message: "" };
-  }
-
-  /* Here’s the juicy bit for posting the form submission */
-
-  handleSubmit = e => {
-    fetch("/", {
-      method: "POST",
-      headers: { "Content-Type": "application/x-www-form-urlencoded" },
-      body: encode({ "form-name": "contact", ...this.state })
-    })
-      .then(() => alert("Success!"))
-      .catch(error => alert(error));
-
-    e.preventDefault();
+export function ContactForm () {
+  
+  const { register, handleSubmit, errors } = useForm();
+  
+  const onSubmit = (data) => {
+    console.log(data);
   };
 
-  handleChange = e => this.setState({ [e.target.name]: e.target.value });
-
-  render() {
-    const { name, email, message } = this.state;
-    return (
-      <form onSubmit={this.handleSubmit}>
-        <p>
-          <label>
-            Your Name: <input type="text" name="name" value={name} onChange={this.handleChange} />
-          </label>
-        </p>
-        <p>
-          <label>
-            Your Email: <input type="email" name="email" value={email} onChange={this.handleChange} />
-          </label>
-        </p>
-        <p>
-          <label>
-            Message: <textarea name="message" value={message} onChange={this.handleChange} />
-          </label>
-        </p>
-        <p>
+  return (
+    <div className="ContactForm">
+      <form onSubmit={handleSubmit(onSubmit)}>
+      <div className="form-control">
+          <label>Name</label>
+          <input type="text" name="name" ref={register({ required: true})} />
+        </div>
+        <div className="form-control">
+          <label>Email</label>
+          <input type="text" name="email" ref={register({
+              required: 'Email is required.',
+              pattern: {
+                value: /^[^@ ]+@[^@ ]+\.[^@ .]{2,}$/,
+                message: 'Email is not valid.'
+              }
+            })}/>
+        </div>
+        <div className="form-control">
+          <label>Level</label>
+          <select name="level" ref={register({ required: true })}>
+            <option value="beginner">Beginner</option>
+            <option value="intermediate">Intermediate</option>
+            <option value="advanced">Advanced</option>
+          </select>
+      </div>
+        <div className="form-control">
+          <label>Message</label>
+          <textarea type="text" name="message" ref={register({ required: true})} />
+        </div>
+        <div className="form-control">
+          <label></label>
           <button type="submit">Send</button>
-        </p>
+        </div>
       </form>
-    );
-  }
+    </div>
+  );
 }
-
-      

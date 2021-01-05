@@ -86,10 +86,15 @@ button:hover {
     flex-direction: column;
     padding: 0px;
     font-size: medium;
+    max-width: 100vw;
   }
 
   .homeContent h2, h3{
     font-size: small;
+  }
+
+  .copy {
+    display: none;
   }
 
   .navlinks {
