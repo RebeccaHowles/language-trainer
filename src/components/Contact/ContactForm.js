@@ -1,37 +1,30 @@
-import React from "react";
+import React, {useState, useEffect } from "react";
 import { useForm } from 'react-hook-form';
 import './contact.css';
 
 export function ContactForm () {
   
-  const { register, handleSubmit} = useForm();
+  const { register } = useForm();
+  
+  const [success, setSuccess] = useState(false);
 
-  function encode (data) {
-    return Object.keys(data)
-        .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
-        .join("&")
-  }
-
-  const onSubmit = (event) => {
-    event.preventDefault()
-    fetch("/", {
-      method: "POST",
-      headers: { "Content-Type": "application/x-www-form-urlencoded" },
-      body: encode({
-        "ContactForm": event.target.getAttribute("name"),
-        'Name': event.target.getAttribute("name"),
-        'Email': event.target.getAttribute("name"),
-        'Level': event.target.getAttribute("name"),
-        'Message': event.target.getAttribute("name"),
-      })
-    }).then(() => document.querySelector('#the-form').append(<p>Thank you for your message</p>)).catch(error => alert(error))
-  }
+  useEffect(() => {
+    if ( window.location.search.includes('success=true') ) {
+      setSuccess(true);
+    }
+  }, []);
 
   return (
     <div className="ContactForm">
-      <form data-netlify="true" name="ContactForm" method="post" onSubmit={handleSubmit(onSubmit)}>
-      <input type="hidden" name="ContactForm" value="ContactForm" />
+      <form name="contact" 
+            method="POST" 
+            action="/contact/?success=true"
+            data-netlify="true" >
+      <input type="hidden" name="form-name" value="contact" />
       <div className="form-control">
+      {success && (
+          <p style={{ color: "green" }}>Thanks for your message! </p>
+        )}
           <label>Name</label>
           <input type="text" name="Name" ref={register({ required: true})} />
         </div>
