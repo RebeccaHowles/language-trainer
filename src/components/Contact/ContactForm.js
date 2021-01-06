@@ -3,12 +3,6 @@ import { useForm } from 'react-hook-form';
 import './contact.css';
 
 
-function encode(data) {
-  return Object.keys(data)
-      .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
-      .join("&")
-}
-
 export function ContactForm () {
   
   const { register, handleSubmit, errors } = useForm();
