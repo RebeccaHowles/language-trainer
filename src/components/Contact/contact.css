@@ -18,6 +18,9 @@
   margin: 10px;
 }
 
+.contact span {
+  color: red;
+}
 .contact h2 {
   color:#006B6B;
 }
