@@ -18,6 +18,10 @@
   margin: 10px;
 }
 
+.contact h2 {
+  color:#006B6B;
+}
+
 label {
   display: block;
   margin-bottom: .1em;
