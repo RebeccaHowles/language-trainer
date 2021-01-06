@@ -82,7 +82,7 @@ export function Contact () {
             <div className="form-control">
               <label></label>
               <p className="screen-reader-text">
-              <label>Leave empty if you human <input name="bot-field" /></label>
+              <label>Leave empty if you are human <input name="bot-field" /></label>
             </p>
               <button type="submit">Send</button>
             </div>
