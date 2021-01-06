@@ -5,21 +5,39 @@ import './contact.css';
 export function ContactForm () {
   
   const { register, handleSubmit} = useForm();
-  
-  const onSubmit = (data) => {
-    console.log(data);
-  };
+
+  function encode (data) {
+    return Object.keys(data)
+        .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
+        .join("&")
+  }
+
+  const onSubmit = (event) => {
+    event.preventDefault()
+    fetch("/", {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: encode({
+        "ContactForm": event.target.getAttribute("name"),
+        'Name': event.target.getAttribute("name"),
+        'Email': event.target.getAttribute("name"),
+        'Level': event.target.getAttribute("name"),
+        'Message': event.target.getAttribute("name"),
+      })
+    }).then(() => document.querySelector('#the-form').append(<p>Thank you for your message</p>)).catch(error => alert(error))
+  }
 
   return (
     <div className="ContactForm">
-      <form onSubmit={handleSubmit(onSubmit)}>
+      <form data-netlify="true" name="ContactForm" method="post" onSubmit={handleSubmit(onSubmit)}>
+      <input type="hidden" name="ContactForm" value="ContactForm" />
       <div className="form-control">
           <label>Name</label>
-          <input type="text" name="name" ref={register({ required: true})} />
+          <input type="text" name="Name" ref={register({ required: true})} />
         </div>
         <div className="form-control">
           <label>Email</label>
-          <input type="text" name="email" ref={register({
+          <input type="text" name="Email" ref={register({
               required: 'Email is required.',
               pattern: {
               value: /^[^@ ]+@[^@ ]+\.[^@ .]{2,}$/,
@@ -29,15 +47,15 @@ export function ContactForm () {
         </div>
         <div className="form-control">
           <label>Level</label>
-          <select name="level" ref={register({ required: true })}>
-            <option value="beginner">Beginner</option>
-            <option value="intermediate">Intermediate</option>
-            <option value="advanced">Advanced</option>
+          <select name="Level" ref={register({ required: true })}>
+            <option value="Beginner">Beginner</option>
+            <option value="Intermediate">Intermediate</option>
+            <option value="Advanced">Advanced</option>
           </select>
       </div>
         <div className="form-control">
           <label>Message</label>
-          <textarea type="text" name="message" ref={register({ required: true})} />
+          <textarea type="text" name="Message" ref={register({ required: true})} />
         </div>
         <div className="form-control">
           <label></label>

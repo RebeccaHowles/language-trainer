@@ -10,7 +10,7 @@ export function Contact () {
   return (
     <div className='content'>
       <div className='backgroundImage'>
-        <div className='contact'>
+        <div className='contact' id='the-form'>
           <h3><FontAwesomeIcon icon={faEnvelope} /> Get in touch</h3>
         <p>Contact via <FontAwesomeIcon icon={faPhone} />{' '}
           <span className='iconify' data-icon='fa-whatsapp' data-inline='false'/>{' '}+49(0)1737586025</p>
