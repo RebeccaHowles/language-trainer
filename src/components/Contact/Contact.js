@@ -39,7 +39,7 @@ export function Contact () {
           <h2>{notification}</h2>
           <form name="contact" 
             method="POST" 
-            action="/thank-you/"
+            action="/thank-you"
             data-netlify="true" 
             data-netlify-recaptcha="true"
             onSubmit={handleSubmit(onSubmit)}>
