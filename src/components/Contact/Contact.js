@@ -17,6 +17,8 @@ export function Contact () {
 
   const [notification, setNotification] = useState('');
 
+  const [submitted, setSubmitted] = useState(false);
+
   const onSubmit = data => {
     //alert(JSON.stringify(data));
     fetch("/", {
@@ -24,7 +26,10 @@ export function Contact () {
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
       body: encode({ "form-name": "contact", ...data })
     })
-      .then(() => setNotification("Form Submission Successful!!"))
+      .then(() => {
+        setNotification("Your message has been sent")
+        setSubmitted(true)
+      })
       .catch(error => setNotification("Form Submission Failed!")); 
   }; 
 
@@ -37,7 +42,7 @@ export function Contact () {
           <span className='iconify' data-icon='fa-whatsapp' data-inline='false'/>{' '}+49(0)1737586025</p>
           <p>or message me directly:</p>
           <h2>{notification}</h2>
-          <form name="contact" 
+          {!submitted ? <form name="contact" 
             method="POST" 
             action="/thank-you"
             data-netlify="true" 
@@ -75,7 +80,7 @@ export function Contact () {
               <label></label>
               <button type="submit">Send</button>
             </div>
-          </form>
+          </form> : <h1>Thank you!</h1> }
         </div>
       </div>
     </div>
