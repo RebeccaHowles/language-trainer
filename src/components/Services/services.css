@@ -1,15 +1,12 @@
-.content {
-  flex-direction: column;
-  text-align: justify;
-}
-
 .services {
   max-width: 800px;
-  color: black;
-  background: white;
   border-radius: 25px;
   padding: 25px;
-  margin-top: 1em;
+  margin: 10px;
+  color: black;
+  background: white;
+  max-height: 80vh;
+  overflow-y:scroll;
 }
 
 .services h3 {

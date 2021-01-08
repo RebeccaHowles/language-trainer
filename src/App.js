@@ -69,7 +69,7 @@ function App () {
           <Route path='/testimonials' component={Testimonials} />
           <Route path='/contact' component={Contact} />
         </Switch>
-      </div>
+      </div>  
       <Footer />
     </Router>
   );

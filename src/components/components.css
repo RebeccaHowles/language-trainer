@@ -14,11 +14,6 @@ button:hover {
   border: 1px solid #006B6B;
 }
 
-.content {
-  max-height: 90vh;
-  overflow-y:scroll;
-}
-
 .header {
   display: flex;
   justify-content: space-between;
@@ -54,6 +49,13 @@ button:hover {
 }
 
 
+.content {
+  max-height: 90vh;
+  overflow-y:scroll;
+  padding: 0px;
+  margin: 0px;
+}
+
 .backgroundImage {
   background-image: url('./Map.png');
   height: 90vh;
@@ -64,19 +66,18 @@ button:hover {
   place-items: center;
 }
 
-
 .callToAction button {
   margin: 1em;
 }
 
 
-@media screen and (max-width: 769px) {
+@media screen and (max-width: 768px) {
+  .header {
+    height: 8vh;
+  }
+
   .content {
-    align-items: center;
-    flex-direction: column;
-    padding: 0px;
     font-size: small;
-    max-width: 100vw;
   }
 
   .homeContent h2, h3 {
@@ -86,12 +87,12 @@ button:hover {
   .copy {
     display: none;
   }
-
+  
   .mobileNavlinks {
     background-color: #006B6B; 
     position: absolute;
     right: 0px;
-    top: 10vh;
+    top: 8vh;
     width: 50%;
     display: none; 
   }
@@ -106,14 +107,6 @@ button:hover {
     cursor: pointer;
     font-weight: bold;
     color: white;
-  }
-
-  .mobileNavlink a:hover {
-    background-color: white; 
-    color:#006B6B;
-    border: 1px solid white;
-    padding: 10px;
-    border-radius: 10px;
   }
 
   .bars { 

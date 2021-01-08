@@ -6,12 +6,13 @@
 
 .contact {
   max-width: 800px;
-  min-width: 300px;
-  color: black;
-  background: white;
   border-radius: 25px;
   padding: 25px;
-  margin-top: 1em;
+  margin: 10px;
+  color: black;
+  background: white;
+  max-height: 80vh;
+  overflow-y:scroll;
 }
 
 .contact p {

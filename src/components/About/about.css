@@ -1,18 +1,30 @@
-.video {
-  margin-top: 1em;
+.aboutWapper {
+  max-width: 800px;
+  border-radius: 25px;
+  max-height: 90vh;
+  overflow-y:scroll;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
 }
 
-.about-me  {
+.video {
+  margin: auto;
+  height: 250px; 
+  width: 400px
+}
+
+.about-me {
   max-width: 800px;
-  color: black;
-  background: white;
   border-radius: 25px;
   padding: 25px;
-  margin-top: 1em;
+  margin: 10px;
+  color: black;
+  background: white;
+  max-height: 80vh;
 }
 
 .about-me p {
-  line-height: 24px;
-  padding-top: 20px;
+  padding-top: 10px;
   text-align: justify;
 }
