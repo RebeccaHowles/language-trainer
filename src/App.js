@@ -1,16 +1,54 @@
 import React from 'react';
 import './App.css';
 
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faHome } from '@fortawesome/free-solid-svg-icons'
+
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 import './components/components.css';
-import { Footer, Navigation, Testimonials, Contact, Information, Services, About, Home } from './components/index.js';
+import { Footer, Navigation, Testimonials, Contact, Information, Services, About, Home, Mobile, useMediaQuery } from './components/index.js';
+
 
 function App () {
+
+  const links = [
+		{
+			text: <FontAwesomeIcon icon={faHome} />,
+			path: '/',
+    },
+    {
+			text: 'About',
+			path: '/about',
+    },
+    {
+			text: 'Services',
+			path: '/services',
+		},
+		{
+			text: 'Information',
+			path: '/information',
+    },
+    {
+			text: 'Testimonials',
+			path: '/testimonials',
+		},
+		{
+			text: 'Contact',
+			path: '/contact',
+		},
+  ]
+  
+  const isMobile = useMediaQuery('(max-width: 769px)');
+
   return (
     <Router>
       <div className='App'>
-        <Navigation />
+        <div className='header'>
+          <div className='logo'>Rebecca Howles</div>
+            {isMobile ? ( <Mobile links={links} /> ) : (
+              <Navigation links={links} /> )}
+        </div>
         <Switch>
           <Route path='/' exact component={Home} />
           <Route path='/about' component={About} />
@@ -24,5 +62,6 @@ function App () {
     </Router>
   );
 }
+
 
 export default App;

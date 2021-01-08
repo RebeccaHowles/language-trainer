@@ -19,6 +19,41 @@ button:hover {
   overflow-y:scroll;
 }
 
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 10vh;
+  width: 100vw;
+  background-color: #006B6B;
+  padding: 15px;
+}
+
+.logo {
+  font-weight: bold;
+  color: white;
+}
+
+.navigation {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.navlinks {
+    display: block;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.navlinks a {
+  font-weight: bold;
+  color: white;
+  margin: 10px;
+}
+
+
 .backgroundImage {
   background-image: url('./Map.png');
   height: 90vh;
@@ -34,90 +69,57 @@ button:hover {
   margin: 1em;
 }
 
-.navigation {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  min-height: 10vh;
-  min-width: 10vw;
-  background-color: #006B6B;
-}
-
-.navlinks {
-  display: flex;
-  justify-content: space-around;
-  flex-direction: row;
-  width: 60%;
-}
-
-.navlinks a {
-  font-weight: bold;
-  color: white;
-}
-
-.logo {
-  font-weight: bold;
-  color: white;
-}
-
-.bars {
-  display: none;
-  font-weight: bold;
-  color: white;
-  padding: 20px;
-}
-
-
-@media screen and (max-width: 1024px) {
-
-  .navlinks {
-    display: block;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-  }
-
-}
-
 
 @media screen and (max-width: 769px) {
   .content {
     align-items: center;
     flex-direction: column;
     padding: 0px;
-    font-size: medium;
+    font-size: small;
     max-width: 100vw;
   }
 
-  .homeContent h2, h3{
-    font-size: medium;
+  .homeContent h2, h3 {
+    font-size: small;
   }
 
   .copy {
     display: none;
   }
 
-  .navlinks {
+  .mobileNavlinks {
+    background-color: #006B6B; 
     position: absolute;
     right: 0px;
-    height: 65vh;
     top: 10vh;
-    z-index: 9999;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background-color: #006B6B;
     width: 50%;
-    display: none;
+    display: none; 
   }
 
-  .navlinks li {
-    padding: 35px;
+  .mobileNavlink {
+    text-align: center;
+    margin: 20px;
+    padding: 10px;
   }
 
-  .bars {
-    display: block;
+  .mobileNavlink a {
     cursor: pointer;
+    font-weight: bold;
+    color: white;
+  }
+
+  .mobileNavlink a:hover {
+    background-color: white; 
+    color:#006B6B;
+    border: 1px solid white;
+    padding: 10px;
+    border-radius: 10px;
+  }
+
+  .bars { 
+    font-weight: bold;
+    color: white;
+    padding: 10px; 
   }
 }
 
