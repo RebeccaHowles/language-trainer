@@ -46,7 +46,6 @@ export function Contact () {
             method="POST" 
             action="/thank-you"
             data-netlify="true" 
-            data-netlify-recaptcha="true"
             data-netlify-honeypot="bot-field"
             onSubmit={handleSubmit(onSubmit)}>
               <input type="hidden" name="contact" value="contact" />
@@ -77,7 +76,6 @@ export function Contact () {
               <label>Message {errors.message && <span>This field is required</span>}</label>
               <textarea type="text" name="message" ref={register({ required: true})} />
             </div>   
-            <div data-netlify-recaptcha="true"></div>
             <input type="hidden" name="form-name" value="contactForm" />
             <div className="form-control">
               <label></label>
