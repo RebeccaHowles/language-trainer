@@ -13,7 +13,7 @@ export function Information () {
             <h3><FontAwesomeIcon icon={faDollarSign} /> Prices</h3>
             <ul className='prices'>
               <li>
-                In general the price per unit is €20 - €25 and a class can range from 1-2 units in time. Please contact me for a quote. 
+                As price per unit and availability can vary, please contact me for more information. 
               </li>
               <li>
                 All classes are paid in advance per month at the beginning of the month by bank transfer.
