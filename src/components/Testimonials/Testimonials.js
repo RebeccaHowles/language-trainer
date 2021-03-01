@@ -35,13 +35,30 @@ export function Testimonials () {
       name: 'Daniel',
       year: '27 mar 2017'
     },
+    {
+      id:'5',
+      quote: "We are delighted with Rebecca's classes. Her classes are very enjoyable, dynamic and entertaining. The best teacher we could find.",
+      name: 'Mila',
+      year: '4th Jan 2021'
+    },
+    {
+      id: '6',
+      quote: 'Great teacher. She has a method for teaching English, and always adapts to the goals and characteristics of the student. Her classes are enjoyable and very instructive at the same time, and she is a very pleasant person, which is essential for you to feel comfortable, and to be able to gradually loosen up when speaking in English.',
+      name: 'Guadalupe',
+      year: '4th Jan 2021'
+    },
+    {
+      id:'7',
+      quote: 'She is a wonderful teacher, she knows the content and how to adapt her classes to the students. Very good.',
+      name: 'Ascension',
+      year: '18th Jan 2021'
   ];
 
   return (
     <div className='content'> 
       <div className='backgroundImage'> 
         <div className='quotes'>
-          {Testimonials.map((data) => ( 
+          {Testimonials.map((data).reverse() => ( 
             <li key={data.id}> 
               <div className='card'>
                 <p><FontAwesomeIcon icon={faQuoteLeft} /> {data.quote} <FontAwesomeIcon icon={faQuoteRight} /></p>  
