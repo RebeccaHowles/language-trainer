@@ -58,7 +58,7 @@ export function Testimonials () {
     <div className='content'> 
       <div className='backgroundImage'> 
         <div className='quotes'>
-          {Testimonials.map((data).reverse() => ( 
+          {Testimonials.reverse().map((data) => ( 
             <li key={data.id}> 
               <div className='card'>
                 <p><FontAwesomeIcon icon={faQuoteLeft} /> {data.quote} <FontAwesomeIcon icon={faQuoteRight} /></p>  
