@@ -36,22 +36,23 @@ export function Testimonials () {
       year: '27 mar 2017'
     },
     {
-      id:'5',
+      id:'6',
       quote: "We are delighted with Rebecca's classes. Her classes are very enjoyable, dynamic and entertaining. The best teacher we could find.",
       name: 'Mila',
       year: '4th Jan 2021'
     },
     {
-      id: '6',
+      id: '7',
       quote: 'Great teacher. She has a method for teaching English, and always adapts to the goals and characteristics of the student. Her classes are enjoyable and very instructive at the same time, and she is a very pleasant person, which is essential for you to feel comfortable, and to be able to gradually loosen up when speaking in English.',
       name: 'Guadalupe',
       year: '4th Jan 2021'
     },
     {
-      id:'7',
+      id:'8',
       quote: 'She is a wonderful teacher, she knows the content and how to adapt her classes to the students. Very good.',
       name: 'Ascension',
       year: '18th Jan 2021'
+    }
   ];
 
   return (
